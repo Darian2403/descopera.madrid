@@ -1,0 +1,181 @@
+/* Resetare CSS pentru a asigura uniformitatea */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stiluri globale */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container pentru centrare și aliniere */
+.container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #D32F2F;
+    color: white;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Navigația */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+/* Efect hover pentru linkuri */
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #FFEB3B;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+/* Efectul la hover */
+nav ul li a:hover {
+    color: #FFEB3B; /* Schimbă culoarea textului în galben */
+    transform: scale(1.1); /* Mică mărire la hover */
+}
+
+nav ul li a:hover::before {
+    transform: scaleX(1); /* Efectul de linie galbenă care apare */
+    transform-origin: bottom left;
+}
+
+/* Secțiunea Hero */
+.palatul-regal-page .hero {
+    background: url('images/palatul_regal.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+.palatul-regal-page .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.palatul-regal-page .hero h2, .palatul-regal-page .hero p {
+    position: relative;
+    z-index: 2;
+    animation: slideIn 1.5s ease-out forwards;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);  /* Adăugăm umbră la text */
+}
+
+/* Animație de intrare pentru titluri */
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Secțiunea Info */
+.info {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.info h3 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #D32F2F;
+}
+
+.info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Stiluri pentru butonul de întoarcere la pagina principală */
+nav ul li a.return-home {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #D32F2F;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    display: inline-block;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover pe butonul de întoarcere */
+nav ul li a.return-home:hover {
+    color: #333;  /* Culoare text negru la hover */
+    background-color: #FFEB3B;  /* Schimbă culoarea la galben */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Animație de fade-in pentru pagina completă */
+.palatul-regal-page {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
